@@ -5,14 +5,15 @@ class getUserInfoById extends database {
     super();
   }
   static fetchData(id) {
-    this.create();
-    let Q = 'SELECT * FROM user WHERE id='+id;
-    this.connection.query(Q, (error, results, fields) => {
-      if (error) throw error;
-      const result = results[0];
-      console.log(result);
-    });
-    this.end();
+      this.create();
+      const Q = 'SELECT * FROM user WHERE id='+id;
+      this.connection.query(Q, (error, results, fields) => {
+        if (error) throw error;
+        const result = results[0];
+        console.log('getUserInfoById.js', result);
+        return result;
+      });
+      this.end();
   }
 }
 

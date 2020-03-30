@@ -4,13 +4,20 @@ class handleApiRoutes {
   constructor() {}
 
   static exec() {
-    const parts = handleApiRoutes.parts;
+    (async () => {
+      try {
+        const parts = handleApiRoutes.parts;
 
-    if (parts[0] === 'api')  {
-      if (parts[1] === 'user' && parts[2] === 'get' && parts[3] !== 'undefined') {
-        getUserInfoById.fetchData(parts[3]);
-      }
-    }
+        if (parts[0] === 'api')  {
+          if (parts[1] === 'user' && parts[2] === 'get' && parts[3] !== 'undefined') {
+            console.log( parts[3] );
+            const userInfo = await getUserInfoById.fetchData(parts[3]);
+            console.log('handleApiRoutes', userInfo);
+            return userInfo;
+          }
+        }
+      } catch(e) {}
+    })();
   }
 
   static catchAPIrequest(v) {

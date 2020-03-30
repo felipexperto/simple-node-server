@@ -1,4 +1,20 @@
+* {
+  box-sizing: border-box;
+}
 html, body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+body {
+  padding: 2rem;
+}
+
+code {
+  background-color: rgba(0,0,0,.1);
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
 }
