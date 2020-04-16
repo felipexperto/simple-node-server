@@ -14,13 +14,16 @@ const server = http.createServer((req, res) => {
   const extension = String(path.extname(file)).toLowerCase();
   const type = mimetypes[extension] || 'application/octet-stream';
 
-  fs.readFile(file, (error, content) => {
+  fs.readFile(file, async function(error, content) {
     if (error) {
       if(error.code === 'ENOENT') {
         if (Routes.catchAPIrequest(req.url)) {
-          res.end(Routes.exec(req.url), 'utf-8');
+          let response = await Routes.exec();
+          res.writeHead(200, {'Content-Type': 'application/json'});
+          res.write( response );
+          res.end();
         } else {
-          fs.readFile('./404.html', (error, content) => {
+          fs.readFile('./404.html', function(error, content) {
             res.writeHead(200, {'Content-Type': type});
             res.end(content, 'utf-8');
           })

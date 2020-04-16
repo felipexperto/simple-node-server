@@ -4,20 +4,21 @@ class handleApiRoutes {
   constructor() {}
 
   static exec() {
-    (async () => {
+    const p = new Promise((resolve, reject) => {
       try {
         const parts = handleApiRoutes.parts;
-
         if (parts[0] === 'api')  {
           if (parts[1] === 'user' && parts[2] === 'get' && parts[3] !== 'undefined') {
-            console.log( parts[3] );
-            const userInfo = await getUserInfoById.fetchData(parts[3]);
-            console.log('handleApiRoutes', userInfo);
-            return userInfo;
+            resolve(getUserInfoById.fetchData(parts[3]));
           }
+        } else {
+          reject('API Error');
         }
-      } catch(e) {}
-    })();
+      } catch(err) {
+        console.log(err);
+      }
+    });
+    return p.then((response) => JSON.stringify(response));
   }
 
   static catchAPIrequest(v) {
