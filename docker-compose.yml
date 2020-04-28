@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/app/node_modules
+    ports:
+      - '8080:8080'
+    command: nodemon index.js

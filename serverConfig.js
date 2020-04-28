@@ -1,5 +1,5 @@
-const ip = '127.0.0.1'
-const port = 3000;
+const ip = '0.0.0.0'
+const port = process.env.PORT || 8080;
 
 const mimetypes = { '.html': 'text/html',
 '.js': 'text/javascript',

@@ -23,7 +23,7 @@ document.onreadystatechange = async () => {
       Agora estamos fazendo uma chamada assíncrona para a rota criada no NodeJS.
       Vamos para o Passo 03 em `/index.js`.
     */
-    const fetchResponse = await fetchData('/api/user/get/01');
+    //const fetchResponse = await fetchData('/api/user/get/01');
     // Passo 09: Exibindo resultado
     resultWrapper.innerHTML = JSON.stringify(fetchResponse, null, '\t');
   }
