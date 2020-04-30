@@ -41,10 +41,13 @@ Parte desta construção foi inspirada no modelo do livro "[Node.js API: Learn s
  - No Mac, se você possui o [Homebrew](https://brew.sh/index_pt-br) (gerenciador de pacotes) instalado, pode utilizar o comando: `brew install node`
  
 3. A aplicação consulta uma base de dados e precisamos de uma estrutura para executá-lo.
-  - Novamente, existem diversas possibilidades e vou indicar a instalação do [XAMPP](https://www.apachefriends.org/pt_br/index.html) que nos permite subir um módulo Apache e MySQL.
-  - Após a instalação, execute-o e no `XAMPP Control Panel` dê um "Start" nos dois serviços.
-  - Acesse o endereço: http://localhost/phpmyadmin
-  - Importe nosso banco que está em `db/data.sql` (você encontra um bom tutorial [clicando aqui](https://help.one.com/hc/pt-br/articles/115005588189-Como-importar-uma-base-de-dados-para-phpMyAdmin-) ou pesquisando por: `How to Import a MySQL Database using phpMyAdmin`)
+ - Novamente, existem diversas possibilidades e vou indicar a instalação do [XAMPP](https://www.apachefriends.org/pt_br/index.html) que nos permite subir um módulo Apache e MySQL.
+ - Após a instalação, execute-o e no `XAMPP Control Panel` dê um "Start" nos dois serviços.
+ - Acesse o endereço: http://localhost/phpmyadmin
+ - Importe nosso banco que está em `db/data.sql` (você encontra um bom tutorial [clicando aqui](https://help.one.com/hc/pt-br/articles/115005588189-Como-importar-uma-base-de-dados-para-phpMyAdmin-) ou pesquisando por: `How to Import a MySQL Database using phpMyAdmin`)
+ - Também crie um usuário e dê premissões
+  - `CREATE USER 'nodegreg'@'%' IDENTIFIED BY '123';`
+  - `GRANT ALL ON *.* TO 'nodegreg'@'%';`
  
 4. Via terminal acesse a pasta raíz do projeto;
 
