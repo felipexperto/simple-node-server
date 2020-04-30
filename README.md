@@ -15,21 +15,22 @@ Parte desta construção foi inspirada no modelo do livro "[Node.js API: Learn s
 ### Com Docker
 
 1. Clone este repositório:
- - `git clone https://github.com/felipexperto/simple-node-server.git`
+  - `git clone https://github.com/felipexperto/simple-node-server.git`
 
 2. Se você não possui o Docker instalado, [siga este guia de instalação](https://docs.docker.com/get-docker/).
 
 3. Via terminal acesse a pasta raíz do projeto;
 
 4. Com o Docker instalado e rodando, digite no terminal:
- - `docker-compose up` (aguarde o MySQL iniciar)
+  - `docker-compose up` (aguarde o MySQL iniciar)
 
 5. Pronto, pode acessar a aplicação no endereço:
- - `http://0.0.0.0:8080/`
+  - `http://0.0.0.0:8080/`
 
 6. Quando desejar parar a aplicação, vá no terminal:
- - Pressione `Cmd+C / Ctrl+C`
- - E digite: `docker-compose down`
+
+  - Pressione `Cmd+C / Ctrl+C`
+  - E digite: `docker-compose down`
 
 ### Sem Docker
 
@@ -37,17 +38,20 @@ Parte desta construção foi inspirada no modelo do livro "[Node.js API: Learn s
  - `git clone https://github.com/felipexperto/simple-node-server.git`
 
 2. Se você não tem o NodeJS instalado, instale-o.
- - Há diversas maneiras de fazer este passo, em Windows a mais fácil é [acessando este site](https://nodejs.org/en/), baixando e instalando o pacote.
- - No Mac, se você possui o [Homebrew](https://brew.sh/index_pt-br) (gerenciador de pacotes) instalado, pode utilizar o comando: `brew install node`
+
+  - Há diversas maneiras de fazer este passo:
+    - No Windows a mais fácil é [acessando este site](https://nodejs.org/en/), baixando e instalando o pacote.
+    - No Mac, se você possui o [Homebrew](https://brew.sh/index_pt-br) (gerenciador de pacotes) instalado, pode utilizar o comando: `brew install node`
  
 3. A aplicação consulta uma base de dados e precisamos de uma estrutura para executá-lo.
- - Novamente, existem diversas possibilidades e vou indicar a instalação do [XAMPP](https://www.apachefriends.org/pt_br/index.html) que nos permite subir um módulo Apache e MySQL.
- - Após a instalação, execute-o e no `XAMPP Control Panel` dê um "Start" nos dois serviços.
- - Acesse o endereço: http://localhost/phpmyadmin
- - Importe nosso banco que está em `db/data.sql` (você encontra um bom tutorial [clicando aqui](https://help.one.com/hc/pt-br/articles/115005588189-Como-importar-uma-base-de-dados-para-phpMyAdmin-) ou pesquisando por: `How to Import a MySQL Database using phpMyAdmin`)
- - Também crie um usuário e dê premissões
-  - `CREATE USER 'nodegreg'@'%' IDENTIFIED BY '123';`
-  - `GRANT ALL ON *.* TO 'nodegreg'@'%';`
+
+  - Novamente, existem diversas possibilidades e vou indicar a instalação do [XAMPP](https://www.apachefriends.org/pt_br/index.html) que nos permite subir um módulo Apache e MySQL.
+  - Após a instalação, execute-o e no `XAMPP Control Panel` dê um "Start" nos dois serviços.
+  - Acesse o endereço: http://localhost/phpmyadmin
+  - Importe nosso banco que está em `db/data.sql` (você encontra um bom tutorial [clicando aqui](https://help.one.com/hc/pt-br/articles/115005588189-Como-importar-uma-base-de-dados-para-phpMyAdmin-) ou pesquisando por: `How to Import a MySQL Database using phpMyAdmin`)
+  - Também crie um usuário e dê permissões
+    - `CREATE USER 'nodegreg'@'%' IDENTIFIED BY '123';`
+    - `GRANT ALL ON *.* TO 'nodegreg'@'%';`
  
 4. Via terminal acesse a pasta raíz do projeto;
 
