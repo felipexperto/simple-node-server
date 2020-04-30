@@ -2,6 +2,21 @@ version: '3.5'
 
 services:
 
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: nodegreg
+      MYSQL_PASSWORD: 123
+      MYSQL_DATABASE: node_greg
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db/data.sql:/data/application/data.sql
+    command: --init-file /data/application/data.sql
+    restart: unless-stopped
+
   app:
     container_name: app
     build:
@@ -12,4 +27,6 @@ services:
       - /usr/app/node_modules
     ports:
       - '8080:8080'
-    command: nodemon index.js
+    depends_on:
+      - mysql
+    command: npm run dev

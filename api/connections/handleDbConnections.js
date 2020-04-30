@@ -7,7 +7,7 @@ class database {
     
     // Creating MySQL connection...
     this.connection = mysql.createConnection({
-      host: 'localhost',
+      host: 'mysql',
       user: 'nodegreg',
       password: '123',
       database: 'node_greg' 
