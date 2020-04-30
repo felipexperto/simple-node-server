@@ -55,4 +55,4 @@ Parte desta construção foi inspirada no modelo do livro "[Node.js API: Learn s
 
 6. Rode o projeto com `npm run dev`
 
-7. Acesse http://127.0.0.1:3000
+7. Acesse http://127.0.0.1:8080
